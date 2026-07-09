@@ -78,7 +78,7 @@ header {
 }
 
 .container {
-    background-image: url('../Images/pab_1.jpg');
+    background-image: url('/pab_1.jpg');
     background-size: cover;
     background-position: center 20%;
     min-height: 60vh;
@@ -181,7 +181,7 @@ a{
 /* FOOTER FOTO */
 .footer-container {
     position: relative;
-    background-image: url('../Images/PAB_2.jpg');
+    background-image: url('/PAB_2.jpg');
     background-size: cover;
     background-position: center 30%; /* toont iets meer dan puur de bovenrand */
     min-height: 60vh; /* pas aan naar wens */
