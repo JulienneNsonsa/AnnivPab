@@ -1,0 +1,274 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 1px;
+}
+
+body{
+    background-color: #253748;
+    color: #C8AE6C;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    overflow-x: hidden;
+
+    /* display: grid;
+    grid-template-areas: 
+    "header"
+    "intro"
+    "lieu"
+    "datetime"
+    "info"
+    "confirm"
+    "contact"
+    "footer-container"; */
+}
+
+/* De spots op de achtergrond */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(200, 174, 108, 0.2), transparent 40%),
+        radial-gradient(circle at 85% 25%, rgba(200, 174, 108, 0.15), transparent 35%),
+        radial-gradient(circle at 30% 80%, rgba(200, 174, 108, 0.18), transparent 45%),
+        radial-gradient(circle at 90% 90%, rgba(157, 124, 40, 0.12), transparent 40%);
+    pointer-events: none;
+}
+
+P{
+    font-size: 15px;
+}
+
+/* mobile first */
+div{
+    width: 100%;
+    max-width: 500px; /* nooit breder dan 500px op grote schermen */
+    padding: 0 1rem;
+}
+
+
+/* HEADER PAB_1 */
+header {
+    position: relative;
+    display: flex;
+    justify-content: center; /* centreert .container horizontaal */
+    width: 100%;
+}
+
+.container h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 2.8rem;
+    letter-spacing: 0.03em;
+    line-height: 1.3;
+    padding: 0 1rem;
+}
+
+#pab {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 4rem;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+}
+
+.container {
+    background-image: url('../Images/pab_1.jpg');
+    background-size: cover;
+    background-position: center 20%;
+    min-height: 60vh;
+    max-width: none; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* Dark overlay */
+.container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.container h1 {
+    position: relative;
+    z-index: 1;
+    color: #C8AE6C;
+}
+
+.container h1:first-child {
+    margin-top: 15rem;
+}
+
+/* Gold text */
+#pab-logo {
+    position: relative;
+    z-index: 1;
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+}
+
+/* 
+#pab {
+    font-size: 3rem;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+} */
+
+/* INFO PRATIQUE, LIEU, DATE, HEURE */
+.lieu p{
+    color: #fff;
+}
+
+iframe{
+    border-radius: 1.2rem;
+    border: solid #C8AE6C;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+}
+
+.datetime p{
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.DateTime {
+    color: #C8AE6C;
+}
+
+.info {
+    color: #fff;
+}
+
+.lieu p{
+    font-size: 25px;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.first-word{
+    color: #C8AE6C;
+}
+
+#goud{
+    color: #C8AE6C;
+}
+
+/* CONFIRM LINK */
+a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #C8AE6C;
+    border-bottom: #C8AE6C solid;
+}
+
+/* FOOTER FOTO */
+.footer-container {
+    position: relative;
+    background-image: url('../Images/PAB_2.jpg');
+    background-size: cover;
+    background-position: center 30%; /* toont iets meer dan puur de bovenrand */
+    min-height: 60vh; /* pas aan naar wens */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.footer-container h2,
+.footer-container p {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+.footer-container h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    .container h1 {
+        font-size: 2.4rem;
+    }
+
+    #pab-logo {
+        max-width: 500px;
+    }
+
+    #pab {
+        font-size: 3.5rem;
+    }
+
+    iframe {
+        max-width: 500px;
+        height: 400px;
+    }
+
+    .datetime p {
+        font-size: 1.6rem;
+    }
+
+    .container,
+    .footer-container {
+        min-height: 60vh;
+    }
+
+    .footer-container h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
+/* PC */
+@media (min-width: 1024px) {
+    .container h1 {
+        font-size: 2.8rem;
+    }
+
+    #pab {
+        font-size: 4rem;
+    }
+
+    #pab-logo {
+        max-width: 600px;
+    }
+
+    iframe {
+        height: 500px;
+    }
+
+    .datetime p {
+        font-size: 30px; /* jouw originele waarde */
+    }
+
+    .footer-container h2 {
+        font-size: 2rem;
+    }
+}
