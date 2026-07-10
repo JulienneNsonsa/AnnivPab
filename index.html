@@ -88,11 +88,13 @@ header {
 }
 
 .container {
-    background-image: url('/logo_gradrient.jpg');
+    background-image: url('/small_logo.jpg');
     background-size: cover;
-    background-position: center 0%;
+    background-repeat: no-repeat;
+    background-position: center;
     min-height: 60dvh;
     max-width: none; 
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -139,7 +141,7 @@ header {
 /* BODY 2*/
 .body2{
     position: relative;
-    padding-top: 31rem;
+    padding-top: 20rem;
     align-items: center;
     justify-content: center;
 }
@@ -278,10 +280,25 @@ a{
     #pab-logo {
         max-width: 600px;
     } */
+    .container {
+    background-image: url('/logo_gradrient.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 60dvh;
+    max-width: none; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
 
     .body2{
         position: relative;
-        padding-top: 38rem;
+        padding-top: 30rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -289,10 +306,15 @@ a{
         text-align: center;
     }
 
+    .lieu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     iframe {
-        height: 400px;
-        width: 550px;
-        margin-left: 0;
+        height: 450px;
+        width: 500px;
     }
 
     .datetime p {
@@ -340,10 +362,10 @@ Votre présence sera un précieux témoignage d’amour, de respect et d’honne
     <div class="lieu">
         <p>
        <span class="DateTime">Lieu:</span> Feestzaal Ambassade, <br> zultseweg 150, 8790 Waregem 
-        </p>
+        </p> <br>
         <!-- map -->
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2516.358169418494!2d3.440549011577744!3d50.898588471563095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c315da31d0c5ff%3A0x1de51ae68b789d4a!2sFeestzaal%20Ambassade%20Waregem!5e0!3m2!1sen!2sbe!4v1783598694338!5m2!1sen!2sbe" 
-                 ; allowfullscreen="" loading="lazy" 
+                 ; allowfullscreen="" loading="smooth" 
                 referrerpolicy="strict-origin-when-cross-origin">
         </iframe>
     </div>
