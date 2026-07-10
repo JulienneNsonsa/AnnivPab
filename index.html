@@ -11,7 +11,7 @@
     *{
     box-sizing: border-box;
     margin: 0;
-    padding: 1px;
+    padding: 0;
 }
 
 body{
@@ -88,10 +88,10 @@ header {
 }
 
 .container {
-    background-image: url('pab_1.jpg');
+    background-image: url('/logo_gradrient.jpg');
     background-size: cover;
-    background-position: center 20%;
-    min-height: 60vh;
+    background-position: center 0%;
+    min-height: 60dvh;
     max-width: none; 
     display: flex;
     flex-direction: column;
@@ -102,12 +102,12 @@ header {
 }
 
 /* Dark overlay */
-.container::before {
+/* .container::before {
     content: "";
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.45);
-}
+} */
 
 .container h1 {
     position: relative;
@@ -134,6 +134,15 @@ header {
     letter-spacing: 0.1em;
     font-weight: bold;
 } */
+
+
+/* BODY 2*/
+.body2{
+    position: relative;
+    padding-top: 31rem;
+    align-items: center;
+    justify-content: center;
+}
 
 /* INFO PRATIQUE, LIEU, DATE, HEURE */
 .lieu p{
@@ -163,7 +172,7 @@ iframe{
 }
 
 .lieu p{
-    font-size: 25px;
+    font-size: 20px;
 }
 
 ul{
@@ -224,7 +233,7 @@ a{
 
 /* TABLET */
 @media (min-width: 768px) {
-    .container h1 {
+    /* .container h1 {
         font-size: 2.4rem;
     }
 
@@ -234,7 +243,7 @@ a{
 
     #pab {
         font-size: 3.5rem;
-    }
+    } */
 
     iframe {
         max-width: 500px;
@@ -258,7 +267,7 @@ a{
 
 /* PC */
 @media (min-width: 1024px) {
-    .container h1 {
+    /* .container h1 {
         font-size: 2.8rem;
     }
 
@@ -268,10 +277,22 @@ a{
 
     #pab-logo {
         max-width: 600px;
+    } */
+
+    .body2{
+        position: relative;
+        padding-top: 38rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
     }
 
     iframe {
-        height: 500px;
+        height: 400px;
+        width: 550px;
+        margin-left: 0;
     }
 
     .datetime p {
@@ -285,22 +306,23 @@ a{
 
 </style>
 
+
+<!-- HTML BEGINT HIER -->
+
+
 </head>
 <body>
 
-    
-
-    <header>
     <div class="container">
-        <h1>Soixantième Anniversaire du Patriarche</h1>
-        <h1 id="pab">PAB</h1>
-    </div>
-</header>
+        <!-- <h1>Soixantième Anniversaire du Patriarche</h1> -->
+        <!-- <h1 id="pab">PAB</h1> -->
+
+
     
 
     <!-- CORP DE TEXTE -->
     <div class="intro">
-        <p>Cher membre, <br>
+        <!-- <p>Cher membre, <br>
         Vous êtes cordialement invité(e) à un événement d’exception. <br> <br>
 
 À l’occasion du 60ᵉ anniversaire de notre Patriarche, Pasteur Anaclet Antoine Bungudi Kompolo, nous avons la joie de vous convier à une célébration empreinte de reconnaissance, d’honneur et d’action de grâce. <br> <br>
@@ -309,8 +331,12 @@ Depuis de nombreuses années, son engagement, sa sagesse, sa foi et son dévouem
 
 Votre présence sera un précieux témoignage d’amour, de respect et d’honneur envers celui que Dieu a établi au milieu de nous.
 </p>
-    </div> <br>
+    </div> <br> -->
 <!-- INFO PRATIQUE, LIEU, DATE, HEURE -->
+
+    <div class="body2">
+
+    
     <div class="lieu">
         <p>
        <span class="DateTime">Lieu:</span> Feestzaal Ambassade, <br> zultseweg 150, 8790 Waregem 
@@ -354,7 +380,7 @@ Votre présence sera un précieux témoignage d’amour, de respect et d’honne
              <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdu-bQmGBMw48Oq_Ry35C9tmlw7t_RGWuG7KUSZZBfBevGpSQ/viewform?usp=header"> <strong>Lien de confirmation</strong></a></p> <br>
             
 
-Nous serions profondément honorés de vous compter parmi nous pour célébrer ce moment historique et rendre grâce à Dieu pour les 60 années de vie et de ministère de notre Patriarche.
+            Nous serions profondément honorés de vous compter parmi nous pour célébrer ce moment historique et rendre grâce à Dieu pour les 60 années de vie et de ministère de notre Patriarche.
         </p>
     </div> <br>
 
@@ -367,13 +393,17 @@ Nous serions profondément honorés de vous compter parmi nous pour célébrer c
                  <a href="mailto:">📧 Alistaire</a>
         </p>
     </div> <br>
+    </div> 
+    <!-- EINDE BODY2 -->
 
     <!-- FOOTER FOTO -->
-    <footer class="footer-container">
+    <!-- <footer class="footer-container">
     <h2>merci à tous !</h2>
     <p></p>
-    </footer>
-
+    </footer> -->
+    
+    </div> 
+    <!-- Einde eerste div container -->
 </body>
 
 </html>
