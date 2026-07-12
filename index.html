@@ -1,366 +1,528 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="./invitation.css"> -->
     <title>Invitation Anniversaire de PAB</title>
 
+    <style>
+        /* Import Google Fonts for a luxury, premium look */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
-<style>
-    *{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+        :root {
+            --gold: #C8AE6C;
+            --gold-light: #f3e5ab;
+            --gold-dark: #a3843b;
+            --bg-dark: #253748;
+            --text-white: #ffffff;
+            --text-muted: #cbd5e1;
+            --font-serif-title: 'Playfair Display', serif;
+            --font-serif-body: 'Cormorant Garamond', serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+        }
 
-body{
-    background-color: #253748;
-    color: #fff;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    overflow-x: hidden;
+        body {
+            background: #2b3c4b;
+            background: linear-gradient(180deg, #2b3c4b 0%, #151c24 100%);
+            color: var(--text-white);
+            font-family: var(--font-sans);
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-    /* display: grid;
-    grid-template-areas: 
-    "header"
-    "intro"
-    "lieu"
-    "datetime"
-    "info"
-    "confirm"
-    "contact"
-    "footer-container"; */
-}
+        p {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
 
-/* De spots op de achtergrond */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background:
-        radial-gradient(circle at 15% 15%, rgba(200, 174, 108, 0.2), transparent 40%),
-        radial-gradient(circle at 85% 25%, rgba(200, 174, 108, 0.15), transparent 35%),
-        radial-gradient(circle at 30% 80%, rgba(200, 174, 108, 0.18), transparent 45%),
-        radial-gradient(circle at 90% 90%, rgba(157, 124, 40, 0.12), transparent 40%);
-    pointer-events: none;
-}
+        /* Base div limit overrides */
+        div {
+            width: 100%;
+        }
 
-P{
-    font-size: 15px;
-}
+        /* Container wrapper */
+        .container {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding-bottom: 4rem;
+        }
 
-/* mobile first */
-div{
-    width: 100%;
-    max-width: 500px; /* nooit breder dan 500px op grote schermen */
-    padding: 0 1rem;
-}
+        /* Body container holding the invitation card */
+        .body2 {
+            position: relative;
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
 
+        /* Logo Styling - Blends seamlessly into page background */
+        .logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+        }
 
-/* HEADER PAB_1 */
-header {
-    position: relative;
-    display: flex;
-    justify-content: center; /* centreert .container horizontaal */
-    width: 100%;
-}
+        .site-logo {
+            width: 100%;
+            height: auto;
+            max-width: 450px;
+            /* Removed borders, shadows and rounded corners at rest for seamless integration */
+            transition: transform 0.3s ease;
+        }
 
-.container h1 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    font-size: 2.8rem;
-    letter-spacing: 0.03em;
-    line-height: 1.3;
-    padding: 0 1rem;
-}
+        .site-logo:hover {
+            transform: scale(1.02);
+        }
 
-#pab {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 4rem;
-    letter-spacing: 0.15em;
-    font-weight: 400;
-}
+        /* Premium Card container using Glassmorphism */
+        .card-invitation {
+            background: rgba(21, 28, 36, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(200, 174, 108, 0.25);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+            width: 100%;
+            max-width: 550px;
+            margin: 1.5rem auto 3rem auto;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.container {
-    background-image: url('/pixelfix2.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 60dvh;
-    max-width: none; 
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-}
+        .card-invitation:hover {
+            box-shadow: 0 25px 60px rgba(200, 174, 108, 0.15);
+        }
 
-/* Dark overlay */
-/* .container::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-} */
+        /* Intro typography */
+        .intro p {
+            font-family: var(--font-serif-body);
+            font-size: 1.3rem;
+            font-style: italic;
+            line-height: 1.8;
+            color: #f3eada;
+        }
 
-.container h1 {
-    position: relative;
-    z-index: 1;
-    color: #C8AE6C;
-}
+        .patriarche-name {
+            font-family: var(--font-serif-title);
+            font-weight: 700;
+            color: var(--gold);
+            font-style: normal;
+            display: inline-block;
+            padding: 0.2rem 0;
+            font-size: 1.45rem;
+        }
 
-.container h1:first-child {
-    margin-top: 15rem;
-}
+        .intro strong {
+            color: var(--gold);
+            font-weight: 600;
+        }
 
-/* Gold text */
-#pab-logo {
-    position: relative;
-    z-index: 1;
-    width: 80%;
-    max-width: 400px;
-    height: auto;
-}
+        /* Dividers */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2.5rem auto;
+            width: 70%;
+        }
 
-/* 
-#pab {
-    font-size: 3rem;
-    letter-spacing: 0.1em;
-    font-weight: bold;
-} */
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to var(--direction, right), rgba(200, 174, 108, 0.4), rgba(200, 174, 108, 0));
+        }
 
+        .divider::after {
+            --direction: left;
+        }
 
-/* BODY 2*/
-.body2{
-    position: relative;
-    padding-top: 15rem;
-    align-items: center;
-    justify-content: center;
-}
+        .divider-diamond {
+            width: 8px;
+            height: 8px;
+            background-color: var(--gold);
+            transform: rotate(45deg);
+            margin: 0 15px;
+            box-shadow: 0 0 8px var(--gold);
+        }
 
-/* INFO PRATIQUE, LIEU, DATE, HEURE */
-.lieu p{
-    color: #fff;
-}
+        /* Section titles with icons */
+        .section-title {
+            font-family: var(--font-serif-title);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
 
-iframe{
-    border-radius: 1.2rem;
-    border: solid #C8AE6C;
-    align-items: center;
-    width: 100%;
-    max-width: 350px;
-    height: 300px;
-}
+        .detail-icon {
+            width: 20px;
+            height: 20px;
+            stroke: var(--gold);
+            stroke-width: 2px;
+        }
 
-.datetime p{
-    font-size: 1.2rem;
-    color: #fff;
-}
+        /* Venue layout */
+        .lieu-text {
+            font-size: 1.1rem;
+            color: var(--text-white);
+            margin-bottom: 1.2rem;
+        }
 
-.DateTime {
-    color: #C8AE6C;
-}
+        .map-container {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+        }
 
-.info {
-    color: #fff;
-}
+        iframe {
+            border-radius: 1.2rem;
+            border: 1px solid rgba(200, 174, 108, 0.4);
+            width: 100%;
+            height: 280px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: border-color 0.3s ease;
+        }
 
-.lieu p{
-    font-size: 20px;
-}
+        iframe:hover {
+            border-color: var(--gold);
+        }
 
-ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+        /* Date and Time styling */
+        .datetime-text {
+            font-size: 1.15rem;
+            color: var(--text-white);
+            line-height: 1.8;
+        }
 
-.first-word{
-    color: #C8AE6C;
-}
+        .DateTime {
+            color: var(--gold);
+            font-weight: 600;
+        }
 
-#goud{
-    color: #C8AE6C;
-}
+        /* Recommandations styling */
+        .info {
+            margin-top: 1.5rem;
+        }
 
-/* CONFIRM LINK */
-a{
-    text-decoration: none;
-    font-size: 20px;
-    color: #C8AE6C;
-    border-bottom: #C8AE6C solid;
-}
+        .reco-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
 
-/* FOOTER FOTO */
-.footer-container {
-    position: relative;
-    background-image: url('PAB_2.jpg');
-    background-size: cover;
-    background-position: center 30%; /* toont iets meer dan puur de bovenrand */
-    min-height: 60vh; /* pas aan naar wens */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
+        .reco-list li {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 1.2rem;
+        }
 
-.footer-container::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-}
+        .reco-list li::before {
+            content: "•";
+            color: var(--gold);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+            top: -2px;
+        }
 
-.footer-container h2,
-.footer-container p {
-    position: relative;
-    z-index: 1;
-    color: white;
-}
+        .first-word {
+            color: var(--gold);
+            font-weight: 600;
+        }
 
-.footer-container h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
+        /* Confirmation CTA Button */
+        .confirm-intro {
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            color: var(--text-white);
+        }
 
-/* TABLET */
-@media (min-width: 768px) {
-    /* .container h1 {
-        font-size: 2.4rem;
-    }
+        .confirm-btn-container {
+            margin: 2.5rem 0;
+        }
 
-    #pab-logo {
-        max-width: 500px;
-    }
+        .confirm-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: #1a2634;
+            font-family: var(--font-sans);
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 1.1rem 2.8rem;
+            border-radius: 50px;
+            border: none;
+            box-shadow: 0 8px 25px rgba(200, 174, 108, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
 
-    #pab {
-        font-size: 3.5rem;
-    } */
+        .confirm-button span {
+            position: relative;
+            z-index: 2;
+        }
 
-     .container {
-    background-image: url('/smaller_logo.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 60dvh;
-    max-width: none; 
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-     }
+        .confirm-button .btn-icon {
+            width: 18px;
+            height: 18px;
+            stroke: #1a2634;
+            stroke-width: 2.5px;
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
 
-      .body2{
-        position: relative;
-        padding-top: 15rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        text-align: center;
-    }
+        .confirm-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(200, 174, 108, 0.5);
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+            color: #0f172a;
+        }
 
-    iframe {
-        max-width: 500px;
-        height: 400px;
-    }
+        .confirm-button:hover .btn-icon {
+            transform: translateX(5px);
+            stroke: #0f172a;
+        }
 
-    .datetime p {
-        font-size: 1.6rem;
-    }
+        .confirm-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 4px 15px rgba(200, 174, 108, 0.3);
+        }
 
-    .container,
-    .footer-container {
-        min-height: 60vh;
-    }
+        /* Shiny reflection effect */
+        .confirm-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.3) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg);
+            transition: 0.75s;
+            z-index: 1;
+        }
 
-    .footer-container h2 {
-        font-size: 1.8rem;
-    }
-}
+        .confirm-button:hover::after {
+            left: 125%;
+        }
 
+        .confirm-outro {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+        }
 
-/* PC */
-@media (min-width: 1024px) {
-    /* .container h1 {
-        font-size: 2.8rem;
-    }
+        /* Contact Info */
+        .contact p {
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
 
-    #pab {
-        font-size: 4rem;
-    }
+        .contact-name {
+            color: var(--text-white);
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin: 0.3rem 0;
+        }
 
-    #pab-logo {
-        max-width: 600px;
-    } */
-    .container {
-    background-image: url('/logo_gradrient.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 60dvh;
-    max-width: none; 
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-}
+        .phone-link {
+            color: var(--gold);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            border-bottom: 1px dashed rgba(200, 174, 108, 0.4);
+            padding-bottom: 2px;
+            transition: border-bottom-color 0.3s, color 0.3s;
+        }
 
-    .body2{
-        position: relative;
-        padding-top: 38rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        text-align: center;
-    }
+        .phone-link:hover {
+            color: var(--gold-light);
+            border-bottom-color: var(--gold-light);
+        }
 
-    .lieu{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    iframe {
-        height: 450px;
-        width: 500px;
-    }
+        .detail-icon-small {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            stroke-width: 2px;
+        }
 
-    .datetime p {
-        font-size: 30px; /* jouw originele waarde */
-    }
+        /* Media Query: Tablets (min-width: 768px) */
+        @media (min-width: 768px) {
+            .container {
+                min-height: 100vh;
+            }
 
-    .footer-container h2 {
-        font-size: 2rem;
-    }
-}
+            .body2 {
+                padding-top: 2.5rem;
+            }
 
-</style>
+            .card-invitation {
+                max-width: 650px;
+                padding: 4rem 3rem;
+            }
 
+            .intro p {
+                font-size: 1.4rem;
+            }
 
-<!-- HTML BEGINT HIER -->
+            .patriarche-name {
+                font-size: 1.6rem;
+            }
 
+            iframe {
+                height: 320px;
+            }
+
+            .datetime-text {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* Media Query: Desktop PC (min-width: 1024px) */
+        @media (min-width: 1024px) {
+            .container {
+                min-height: 100vh;
+            }
+
+            .body2 {
+                padding-top: 4rem;
+            }
+
+            .logo-wrapper {
+                max-width: 700px;
+                margin: 2rem auto;
+            }
+
+            .site-logo {
+                max-width: 650px;
+            }
+
+            .card-invitation {
+                max-width: 850px;
+                /* Wider card to fit grid layout beautifully */
+                padding: 5rem 4rem;
+                margin-top: 2rem;
+            }
+
+            /* Columns for PC layout */
+            .details-grid {
+                display: grid;
+                grid-template-columns: 1.1fr 0.9fr;
+                gap: 3rem;
+                align-items: start;
+                text-align: left;
+                margin: 2rem 0;
+            }
+
+            .section-title {
+                justify-content: flex-start;
+                font-size: 1.5rem;
+            }
+
+            .lieu-text {
+                font-size: 1.15rem;
+                line-height: 1.6;
+            }
+
+            .map-container {
+                max-width: none;
+            }
+
+            iframe {
+                height: 330px;
+            }
+
+            .details-right {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .datetime-text {
+                font-size: 1.3rem;
+            }
+
+            .reco-list li {
+                font-size: 1rem;
+            }
+
+            .intro p {
+                font-size: 1.5rem;
+            }
+
+            .patriarche-name {
+                font-size: 1.75rem;
+            }
+
+            .confirm-intro,
+            .confirm-outro {
+                font-size: 1.15rem;
+            }
+
+            .confirm-button {
+                font-size: 1.1rem;
+                padding: 1.2rem 3.2rem;
+            }
+        }
+    </style>
 
 </head>
-
-
 
 <body>
 
@@ -368,88 +530,154 @@ a{
         <!-- <h1>Soixantième Anniversaire du Patriarche</h1> -->
         <!-- <h1 id="pab">PAB</h1> -->
 
-    <div class="body2"> 
-
-    <!-- CORP DE TEXTE -->
-    <div class="intro">
-        <p>Cher membre, <br>
-        
-Vous êtes cordialement invité(e) à un événement d’exception. 
-
-À l’occasion du 60ᵉ anniversaire de notre Patriarche,
-Pasteur Anaclet Antoine Bungudi Kompolo,
-Nous avons la joie de vous convier à une célébration empreinte de reconnaissance et d’honneur. 
-
-Cette cérémonie sera l’occasion de rendre grâce à Dieu pour son parcours, de lui témoigner notre affection et notre gratitude, et de partager ensemble un moment de communion.
-</p>
-    </div> <br>
-    
-    <!-- INFO PRATIQUE, LIEU, DATE, HEURE -->
-    <div class="lieu">
-        <p>
-       <span class="DateTime">Lieu:</span> Feestzaal Ambassade, <br> zultseweg 150, 8790 Waregem 
-        </p> <br>
-        <!-- map -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2516.358169418494!2d3.440549011577744!3d50.898588471563095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c315da31d0c5ff%3A0x1de51ae68b789d4a!2sFeestzaal%20Ambassade%20Waregem!5e0!3m2!1sen!2sbe!4v1783598694338!5m2!1sen!2sbe" 
-                 ; allowfullscreen="" loading="smooth" 
-                referrerpolicy="strict-origin-when-cross-origin">
-        </iframe>
-    </div>
-
-    <div class="datetime">
-       <p>
-        <span class="DateTime">🗓  Date :</span> 18 septembre 2026 <br>
-        <span class="DateTime">🕒 Heure :</span> 18h00
-       </p>
-    </div> <br>
-
-    <div class="info">
-        <p>
-             Afin de garantir le bon déroulement de cette commémoration,
-Nous vous remercions de respecter les recommandations suivantes : <br> <br>
-            <ul>
-                <li>
-                    <span class="first-word">Ponctualité: </span>Par considération pour le Patriarche, les invités et pour le déroulement harmonieux du programme prévu, Nous vous prions d’être présent(e) au moins 30 minutes avant le début de la cérémonie.
-                </li> <br>
-                <li>
-                    <span class="first-word">Tenue: </span> Cet anniversaire étant une célébration d’honneur, une tenue élégante, soignée et décente est vivement souhaitée.
-                </li>
-            </ul>
-        </p>
-    </div> <br>
-
-<!-- CONFIRMATION, MOT DE FIN -->
-    <div class="confirm">
-        <p>
-            Pour nous permettre d’organiser cet événement dans les meilleures conditions, nous vous remercions de bien vouloir confirmer votre présence avant le [date limite]. <br> <br>
-
-             <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfu__K-JNJaTeUOfiEvw1qonIGzMQLsAxvf-ozde4bbhogXNw/viewform"> <strong>Lien de confirmation</strong></a></p> <br>
+        <div class="body2">
             
+            <!-- LOGO PRINCIPAL -->
+            <div class="logo-wrapper">
+                <img src="logo.png" alt="Soixantième Anniversaire du Patriarche" class="site-logo">
+            </div>
 
-            Nous serions profondément honorés de vous compter parmi nous pour célébrer ce moment historique et rendre grâce à Dieu pour les 60 années de vie et de ministère de notre Patriarche.
-        </p>
-        
-    </div> <br>
+            <div class="card-invitation">
+                <!-- CORP DE TEXTE -->
+                <div class="intro">
+                    <p>Cher membre,<br><br>
+                        Vous êtes cordialement invité(e) à un événement d’exception.<br><br>
+                        À l’occasion du 60ᵉ anniversaire de notre Patriarche,<br>
+                        <span class="patriarche-name">Pasteur Anaclet Antoine Bungudi Kompolo</span>,<br>
+                        nous avons la joie de vous convier à une célébration empreinte de reconnaissance et
+                        d’honneur.<br><br>
+                        Cette cérémonie sera l’occasion de rendre grâce à Dieu pour son parcours, de lui témoigner notre
+                        affection et notre gratitude, et de partager ensemble un moment de communion.
+                    </p>
+                </div>
 
-    <div class="contact">
-        <p>
-            Pour toute information supplémentaire, veuillez contacter : <br>
+                <div class="divider">
+                    <div class="divider-diamond"></div>
+                </div>
 
-                Alistaire <br>
-                <a href="tel:+32 485 28 05 13">📞 +32 485 28 05 13</a><br>
-                 <!-- <a href="mailto:">📧 Alistaire</a> -->
-        </p>
-    </div> <br>
-    </div> 
-    <!-- EINDE BODY2 -->
+                <!-- INFO PRATIQUE, LIEU, DATE, HEURE -->
+                <div class="details-grid">
+                    <div class="lieu">
+                        <h3 class="section-title">
+                            <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            Lieu de la célébration
+                        </h3>
+                        <p class="lieu-text">
+                            <strong>Feestzaal Ambassade</strong><br>
+                            zultseweg 150, 8790 Waregem
+                        </p>
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2516.358169418494!2d3.440549011577744!3d50.898588471563095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c315da31d0c5ff%3A0x1de51ae68b789d4a!2sFeestzaal%20Ambassade%20Waregem!5e0!3m2!1sen!2sbe!4v1783598694338!5m2!1sen!2sbe"
+                                allowfullscreen="" loading="smooth" referrerpolicy="strict-origin-when-cross-origin">
+                            </iframe>
+                        </div>
+                    </div>
 
-    <!-- FOOTER FOTO -->
-    <!-- <footer class="footer-container">
+                    <div class="details-right">
+                        <div class="datetime">
+                            <h3 class="section-title">
+                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" />
+                                </svg>
+                                Date & Heure
+                            </h3>
+                            <p class="datetime-text">
+                                🗓 <span class="DateTime">Vendredi 18 septembre 2026</span><br>
+                                🕒 <span class="DateTime">À partir de 18h00</span>
+                            </p>
+                        </div>
+
+                        <div class="info">
+                            <h3 class="section-title">
+                                <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="12" y1="16" x2="12" y2="12" />
+                                    <line x1="12" y1="8" x2="12.01" y2="8" />
+                                </svg>
+                                Recommandations
+                            </h3>
+                            <ul class="reco-list">
+                                <li>
+                                    <span class="first-word">Ponctualité :</span> Par considération pour le Patriarche,
+                                    les invités et pour le déroulement harmonieux du programme, nous vous prions d’être
+                                    présent(e) au moins 30 minutes avant le début de la cérémonie.
+                                </li>
+                                <li>
+                                    <span class="first-word">Tenue :</span> Cet anniversaire étant une célébration
+                                    d’honneur, une tenue élégante, soignée et décente est vivement souhaitée.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider">
+                    <div class="divider-diamond"></div>
+                </div>
+
+                <!-- CONFIRMATION, MOT DE FIN -->
+                <div class="confirm">
+                    <p class="confirm-intro">
+                        Pour nous permettre d’organiser cet événement dans les meilleures conditions, nous vous
+                        remercions de bien vouloir confirmer votre présence avant le [date limite].
+                    </p>
+
+                    <div class="confirm-btn-container">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfu__K-JNJaTeUOfiEvw1qonIGzMQLsAxvf-ozde4bbhogXNw/viewform"
+                            class="confirm-button" target="_blank" rel="noopener noreferrer">
+                            <span>Confirmer ma présence</span>
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <p class="confirm-outro">
+                        Nous serions profondément honorés de vous compter parmi nous pour célébrer ce moment historique
+                        et rendre grâce à Dieu pour les 60 années de vie et de ministère de notre Patriarche.
+                    </p>
+                </div>
+
+                <div class="divider">
+                    <div class="divider-diamond"></div>
+                </div>
+
+                <div class="contact">
+                    <p>
+                        Pour toute information supplémentaire, veuillez contacter :<br>
+                        <span class="contact-name">Alistaire</span><br>
+                        <a href="tel:+32 485 28 05 13" class="phone-link">
+                            <svg class="detail-icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            +32 485 28 05 13
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- EINDE BODY2 -->
+
+        <!-- FOOTER FOTO -->
+        <!-- <footer class="footer-container">
     <h2>merci à tous !</h2>
     <p></p>
     </footer> -->
-    
-    </div> 
+
+    </div>
     <!-- Einde eerste div container -->
 </body>
 
